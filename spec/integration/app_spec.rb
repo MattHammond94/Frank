@@ -7,13 +7,13 @@ describe Application do
   let(:app) { Application.new }
 
   context 'GET /names' do
-    it 'Should ' do
+    it 'Should return all passed names successfully' do
       response = get("/names", names: "Julia, Mary, Karim")
       expect(response.body).to eq ("Julia, Mary, Karim")
       expect(response.status).to eq (200)
     end
 
-    it 'Should ' do
+    it 'Should return all passed names successfully' do
       response = get("/names", names: "Matt, John, Paul")
       expect(response.body).to eq ("Matt, John, Paul")
       expect(response.status).to eq (200)
