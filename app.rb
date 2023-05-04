@@ -24,6 +24,7 @@ class Application < Sinatra::Base
 
   get '/greeting' do
     @name = params[:name]
+    @cohort = params[:cohort]
     return erb(:greeter)
   end
 

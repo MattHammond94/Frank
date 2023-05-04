@@ -45,5 +45,10 @@ describe Application do
       response = get('/greeting?name=MFDOOM')
       expect(response.body).to include ('<h1>Hello MFDOOM!</h1>')
     end
+
+    it 'Should return a dynamic div' do
+      response = get('/greeting?name=Grogu&cohort=April')
+      expect(response.body).to include ('<div>You belong to cohort April</div>')
+    end
   end
 end
