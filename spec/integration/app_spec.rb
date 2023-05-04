@@ -19,4 +19,17 @@ describe Application do
       expect(response.status).to eq (200)
     end
   end
+
+  context 'POST /sort-names' do
+    it 'Should return a 404 when typo present' do
+      response = post('/sort-namesss')
+      expect(response.status).to eq(404)
+    end
+
+    it 'Should return a list of names sorted alpahbetically' do
+      response = post('/sort-names?names=Zack,Josh,Mark,Cameron,Aaron,Xavier')
+      expect(response.status).to eq(200)
+      expect(response.body).to eq 'Aaron,Cameron,Josh,Mark,Xavier,Zack'
+    end
+  end
 end

@@ -13,6 +13,11 @@ class Application < Sinatra::Base
     return "#{names}"
   end
 
+  post '/sort-names' do
+    names = params[:names]
+    names.split(",").sort.join(",")
+  end
+
   # get '/' do
   #   return 'Hello!'
   # end
@@ -43,3 +48,7 @@ class Application < Sinatra::Base
   #   return "Thanks #{name}, you sent this message: #{message}"
   # end
 end
+
+
+app = Application.new 
+
