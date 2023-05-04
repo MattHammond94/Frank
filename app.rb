@@ -18,11 +18,11 @@ class Application < Sinatra::Base
     names.split(",").sort.join(",")
   end
 
-  get '/' do
+  get '/hello' do
     return erb(:index)
   end
 
-  # get '/hello' do
+  # get '/greeting' do
   #   name = params[:name]
 
   #   return "Hello #{name}"
