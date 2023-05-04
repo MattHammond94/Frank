@@ -32,4 +32,11 @@ describe Application do
       expect(response.body).to eq 'Aaron,Cameron,Josh,Mark,Xavier,Zack'
     end
   end
+
+  context '/' do
+    it 'Should return the hidden important message in the HTML' do
+      response = get('/')
+      expect(response.body).to include ('<p>This is an important message</p>')
+    end
+  end
 end

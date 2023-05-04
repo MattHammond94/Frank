@@ -18,9 +18,9 @@ class Application < Sinatra::Base
     names.split(",").sort.join(",")
   end
 
-  # get '/' do
-  #   return 'Hello!'
-  # end
+  get '/' do
+    return erb(:index)
+  end
 
   # get '/hello' do
   #   name = params[:name]
@@ -48,7 +48,3 @@ class Application < Sinatra::Base
   #   return "Thanks #{name}, you sent this message: #{message}"
   # end
 end
-
-
-app = Application.new 
-
