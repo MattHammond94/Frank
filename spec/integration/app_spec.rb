@@ -33,10 +33,17 @@ describe Application do
     end
   end
 
-  context '/' do
+  context '/hello' do
     it 'Should return the hidden important message in the HTML' do
-      response = get('/')
+      response = get('/hello')
       expect(response.body).to include ('<p>This is an important message</p>')
+    end
+  end
+
+  context '/greeting' do
+    it 'Should return a dynamic greeting' do
+      response = get('/greeting?name=MFDOOM')
+      expect(response.body).to include ('<h1>Hello MFDOOM!</h1>')
     end
   end
 end

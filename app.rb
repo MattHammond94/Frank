@@ -22,11 +22,10 @@ class Application < Sinatra::Base
     return erb(:index)
   end
 
-  # get '/greeting' do
-  #   name = params[:name]
-
-  #   return "Hello #{name}"
-  # end
+  get '/greeting' do
+    @name = params[:name]
+    return erb(:greeter)
+  end
 
   # get '/posts' do
   #   name = params[:name]
