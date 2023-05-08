@@ -40,6 +40,8 @@ GEM
 
 PLATFORMS
   arm64-darwin-21
+  unknown
+  x86_64-linux
 
 DEPENDENCIES
   rack-test (~> 2.1)
